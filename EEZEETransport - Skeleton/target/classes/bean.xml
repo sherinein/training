@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="booking" class="com.cts.eezee.model.Booking">
+	</bean>
+	
+<bean id="transportService" class="com.cts.eezee.service.TransportService" autowire="byName"/>
+
+	<bean id="vehicle"
+		class="com.cts.eezee.model.Vehicle">
+		<property name="costPerKm">
+			<map>
+				<entry key="Car" value="20" />
+				<entry key="Auto" value="15" />
+			</map>
+		</property>
+		<property name="source" value="Koyambedu"/>
+		<property name="distance">
+			<map>
+				<entry key="Tambaram" value="35" />
+				<entry key="Sholinganallur" value="45" />
+				<entry key="Kodambakkam" value="10" />
+				<entry key="Avadi" value="40" />
+				<entry key="Broadway" value="25" />
+			</map>
+		</property>
+		
+		<property name="totalCost" value="0.0d" />
+		<property name="serviceStatus" value=""></property>
+	</bean>
+	
+	
+	
+	
+</beans>
